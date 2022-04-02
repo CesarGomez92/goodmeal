@@ -16,10 +16,10 @@ class CreateProductsFoundTable extends Migration
         Schema::create('products_found', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_product');
-            $table->unsignedBigInteger('id_route');
+            $table->unsignedBigInteger('id_round');
             $table->timestamps();
             $table->foreign('id_product')->references('id')->on('products');
-            $table->foreign('id_route')->references('id')->on('routes');
+            $table->foreign('id_round')->references('id')->on('rounds');
         });
     }
 

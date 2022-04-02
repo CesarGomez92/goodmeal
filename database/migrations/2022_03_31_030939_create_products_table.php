@@ -18,7 +18,8 @@ class CreateProductsTable extends Migration
       $table->string('name');
       $table->double('price');
       $table->string('type');
-      $table->string('sku');
+      $table->string('sku')->unique();
+      $table->string('code')->unique();
       $table->string('brand');
       $table->date('date_elaboration');
       $table->date('due_date');

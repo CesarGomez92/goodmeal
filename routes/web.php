@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Products\ProductActionsController;
+use App\Http\Controllers\Products\ProductsController;
+use App\Http\Controllers\Rounds\RoundsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('layouts.app');
 });
+
+Route::get('/products/{product:code}', [ProductActionsController::class, 'findProduct']);
+Route::post('/products', [ProductsController::class, 'store']);
+Route::post('/rounds', [RoundsController::class, 'store']);

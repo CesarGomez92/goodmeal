@@ -13,10 +13,10 @@ class CreateRouteTable extends Migration
      */
     public function up()
     {
-        Schema::create('routes', function (Blueprint $table) {
+        Schema::create('rounds', function (Blueprint $table) {
             $table->id();
             $table->string('employee_name');
-            $table->date('date');
+            $table->date('round_date');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateRouteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('routes');
+        Schema::dropIfExists('rounds');
     }
 }
