@@ -15,11 +15,11 @@ class CreateProductsFoundTable extends Migration
     {
         Schema::create('products_found', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_product');
-            $table->unsignedBigInteger('id_round');
+            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('round_id');
             $table->timestamps();
-            $table->foreign('id_product')->references('id')->on('products');
-            $table->foreign('id_round')->references('id')->on('rounds');
+            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('round_id')->references('id')->on('rounds');
         });
     }
 

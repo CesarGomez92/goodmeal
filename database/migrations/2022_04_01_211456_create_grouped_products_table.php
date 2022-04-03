@@ -15,11 +15,11 @@ class CreateGroupedProductsTable extends Migration
     {
         Schema::create('grouped_products', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_group');
-            $table->unsignedBigInteger('id_product_found');
+            $table->unsignedBigInteger('group_id');
+            $table->unsignedBigInteger('product_found_id');
             $table->timestamps();
-            $table->foreign('id_group')->references('id')->on('groups');
-            $table->foreign('id_product_found')->references('id')->on('products_found');
+            $table->foreign('group_id')->references('id')->on('groups');
+            $table->foreign('product_found_id')->references('id')->on('products_found');
         });
     }
 

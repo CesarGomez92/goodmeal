@@ -9,12 +9,13 @@ use App\Http\Controllers\Controller;
 
 class RoundsController extends Controller
 {
-    public function store(){
+    public function store()
+    {
         request()->validate([
             'employee_name' => 'required',
         ]);
 
-        $data = request()->all();
+        $data = ['employee_name' => request()->get('employee_name'), 'round_date' => Carbon::now()];
 
         $round = Round::create($data);
 
